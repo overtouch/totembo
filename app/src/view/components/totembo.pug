@@ -1,0 +1,14 @@
+-var newProduct = [{img: 'images/clock1.webp',name: 'Fantastic Style', price: '1 128 000 UZS', discount: '50%'},{img: 'images/clock2.webp',name: 'Fantastic Style', price: '1 128 000 UZS', discount: '50%'},{img: 'images/clock2.webp',name: 'Fantastic Style', price: '1 128 000 UZS', discount: '50%'}]
+.new-product
+    each product in newProduct 
+        .new-product__item
+            img(src=product.img, alt="").new-product__item-img
+            .new-product__item-info 
+                h2.new-product__item-title= product.name 
+                span.new-product__item-price= product.price 
+            span.new-product__item-discount= product.discount
+            .new-product__item-btns
+                a.new-product__item-btn.icon-heart(href="#!") 
+                a.new-product__item-btn.icon-cart(href="#!") 
+
+

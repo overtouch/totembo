@@ -1,0 +1,48 @@
+.footer {
+    background: $white;
+    padding: 65px 0;
+    &__container {
+        @include container();
+        @include row(0);
+        justify-content: space-between;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+    &__item-title{
+        margin-bottom: 40px;
+    }
+    &__item-li{
+        margin-bottom: 10px;
+    }
+    &__item-link{
+        font-size: 18px;
+        line-height: 13px;
+        color: $black;
+        transition: 300ms;
+        padding: 5px;
+        border-radius: 6px;
+    }
+    &__item-link:hover{
+        background: $black;
+        color: $grey;
+    }
+    &__item-text{
+        margin-bottom: 15px;
+    }
+    &__item-tels{
+        margin-bottom: 15px;
+    }
+    &__item-phone{
+        font-size: 18px;
+        line-height: 22px;
+        color: $greyDark;
+    }
+    &__item-mail{
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 22px;
+        color: $greyDark;
+    }
+}

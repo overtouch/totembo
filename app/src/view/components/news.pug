@@ -1,0 +1,13 @@
+h2.title НОВОСТИ
+.news
+    -var news = {img: 'images/news1.webp', title: 'Как выбрать первые японские часы – советы эксперта', text: 'Задумавшись о том, какие японские часы приобрести, следует держать в уме следующие цифры: в Японии существуют около 2800 фирм, так или иначе связанных с часовым ...', time: ' 19.04.2020 | 17:30', suggest: 'Советы'}
+        -for(var i = 0; i < 6;i++)
+            .news__item
+                img.news__item-img(src=news.img, alt="")
+                .news__item-content 
+                    a.news__item-suggest(href="#!")= news.suggest 
+                    h3.news__item-title= news.title 
+                    p.news__item-text= news.text 
+                    .news__item-time 
+                        span.icon-clock.news__item-icon 
+                        span.news__item-date= news.time 

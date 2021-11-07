@@ -1,0 +1,113 @@
+.container {
+    @include container();
+}
+.row {
+    @include row(0);
+}
+.header {
+    .bg {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.20);
+        display: none;
+        &.active {
+            display: flex;
+        }
+    }
+    &__btn {
+        border-radius: 50%;
+        padding: 6px 10px;
+        font-size: 26px;
+        border: none;
+        outline: none;
+        display: none;
+        @include  media($md) {
+            display: flex;
+        }
+
+    }
+    &__prenav {
+        @extend .container;
+        @extend .row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 15px;
+        &-lang {
+            font-size: 18px;
+            line-height: 13px;
+            text-transform: uppercase;
+            color: #323232;
+        }
+        &-search {
+            font-size: 20px;
+            color: #000000;
+        }
+    }
+    &__nav {
+        border-top: 1px solid #C4C4C4;
+        border-bottom: 1px solid #C4C4C4;
+        padding: 20px 15px;
+        width: 100%;
+        z-index: 9999;
+        backdrop-filter: blur(15px);
+        background: rgba(230, 227, 227, 0.5);
+        &-container {
+            @extend .container;
+            @extend .row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &-list {
+            display: flex;
+            gap: 50px;
+            @include media($md) {
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: -100%;
+                height: 100vh;
+                width: 300px;
+                background: $bg;
+                padding: 50px 0;
+                overflow: auto;
+                transition:  left 300ms;
+                &.active {
+                    left: 0;
+                }
+
+            }
+        }
+        &-link {
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: $greyDark;
+            transition: 300ms;
+            padding: 10px;
+            border-radius: 6px;
+            @include media($md) {
+                padding: 10px;
+                display: block;
+                border-radius: 20px;
+                text-align: center;
+            }
+        }
+        &-link:hover{
+            background: $greyDark;
+            color: $grey;
+        }
+    }
+    &__icons {
+        display: flex;
+        column-gap: 30px;
+        &-link {
+            font-size: 18px;
+            color: $black;
+        }
+    }
+}

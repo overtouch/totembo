@@ -1,0 +1,12 @@
+h2.title ЛИдеры продаж
+.leaders
+    -for(var i = 0; i < 12;i++)
+        -var item = {img: 'images/leaderImg.webp', name: 'Fantastic Style', price: '1 128 000 UZS', discount: '50%'}
+        .leaders__item 
+            img.leaders__item-img(src=item.img, alt="")
+            h2.leaders__item-title= item.name
+            p.leaders__item-price= item.price 
+            span.leaders__item-discount= item.discount
+            .leaders__item-btns 
+                a.leaders__item-btn.icon-heart(href="#!") 
+                a.leaders__item-btn.icon-cart(href="#!") 
